@@ -110,6 +110,25 @@ public class DataFrame<T> {
     
     // MARK: Utils
     
+    public func transformStringToInt(arrayOfIndexes : [Int] = []) {
+        var dictFeatures : [String : [String : Int]] = [:]
+        var dictValues : [String : Int] = [:]
+        var counter : Int = 0
+        for i in 0..<self.getHeader().count {
+            if self.getHeader()[i].getDType() == .nominalString {
+                for data in self.getPossibleValues(key: i).enumerated(){
+                    dictValues[data.element.key as! String] = counter
+                    counter += 1
+                }
+//                   self.updateValues(index: i, dictValues: dictValues)
+                dictFeatures[self.getHeader()[i].getName()] = dictValues
+            }
+            counter = 0
+            dictValues = [:]
+        }
+        print(dictFeatures)
+    }
+    
     public func getPossibleValues(key : Int) -> [AnyHashable : Int] {
         return NSCountedSet(array: Array(self.data[key]!)).dictionary
     }
@@ -170,20 +189,18 @@ public class DataFrame<T> {
         for feature in self.getHeader(){
             let values = self.getPossibleValues(key: feature.getIndex())
             if values.count >= minOccurence && values.count <= maxOccurence {
-                self.getHeader()[feature.getIndex()].setDType(dType: .nominal)
-                
                 var listValues = [Any]()
                 for item in values {
                     if item.key is String {
                         listValues.append(item.key as! String)
+                        self.getHeader()[feature.getIndex()].setDType(dType: .nominalString)
                     } else {
                         listValues.append(item.key as! Int)
+                        self.getHeader()[feature.getIndex()].setDType(dType: .nominalInt)
                     }
                     
                 }
-                // Seto para nominal
                  self.getHeader()[feature.getIndex()].setPossibleValues(values: listValues)
-                
             }
         }
     }
@@ -223,6 +240,15 @@ public class DataFrame<T> {
                 "values" : doubleData]
     }
     
+    public func updateValues(index : Int, dictValues: [String : Int]) {
+        
+        for i in 0..<self.shape()[1] {
+            self.data[index]![i] = dictValues[self.rowAtIndex(index: i)[index] as! String]!
+            print("Converting \(self.data[index]![i]) para \(dictValues[self.rowAtIndex(index: i)[index] as! String]!)")
+//            if self.header.header()[index].getIndex() ==
+
+        }
+    }
 }
 
 

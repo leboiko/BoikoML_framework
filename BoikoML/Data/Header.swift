@@ -46,17 +46,6 @@ public class Header<T> : CustomStringConvertible {
     public func cloneHeader(whichHeader : Feature<Any>) {
         self.features = [whichHeader]
     }
-    // This function expect a dictionary with the feature name as the key and the possible values as a generic array
-    public func setNominalFeatures(features : [String : [T]]) {
-        for nominalFeature in features.keys {
-            for feature in self.features {
-                if feature.getName() == nominalFeature {
-                    feature.setPossibleValues(values: features[nominalFeature]!)
-                    feature.setDType(dType: .nominal)
-                }
-            }
-        }
-    }
     
     public func removeAtIndex(index : Int) {
         self.features.remove(at: index)

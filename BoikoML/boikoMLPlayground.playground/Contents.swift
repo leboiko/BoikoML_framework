@@ -14,8 +14,17 @@ var data = df.trainTestSplit(percent: 0.8)
 var train = data["train"]!, test = data["test"]!
 var treino = train.splitMetaAttribute(dataframe: train), teste = train.splitMetaAttribute(dataframe: test)
 
-train.getPossibleValues(key: 1)
+//for data in train.getPossibleValues(key: 1).enumerated(){
+//    print(data.element.key)
+//}
+
+train.transformStringToInt()
 train.getHeader()
+
+
+for data in train.getPossibleValues(key: 1).enumerated(){
+    print(data.element.key)
+}
 
 //let clf = Knn(k: 7)
 //clf.fit(x_train: treino["x"]!, y_train: treino["y"]!)

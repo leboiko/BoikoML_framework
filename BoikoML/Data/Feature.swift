@@ -9,7 +9,8 @@
 import Foundation
 
 public enum Dtype {
-    case nominal
+    case nominalString
+    case nominalInt
     case numeric
 }
 
@@ -32,6 +33,10 @@ public class Feature<T> {
     
     public func getName() -> String {
         return self.featureName
+    }
+    
+    public func getDType() -> Dtype {
+        return self.dType
     }
     
     public func setPossibleValues(values : [T]) {
