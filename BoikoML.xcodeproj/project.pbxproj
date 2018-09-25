@@ -59,7 +59,7 @@
 				7530E42021591E8A002B25C0 /* Regressors */,
 				750F301D21383DCB00496B92 /* Classifiers */,
 			);
-			name = Inductors;
+			path = Inductors;
 			sourceTree = "<group>";
 		};
 		750F301D21383DCB00496B92 /* Classifiers */ = {
@@ -68,7 +68,7 @@
 				750F301E21383DDB00496B92 /* Lazy */,
 				75491C5821387747006D694B /* Metrics */,
 			);
-			name = Classifiers;
+			path = Classifiers;
 			sourceTree = "<group>";
 		};
 		750F301E21383DDB00496B92 /* Lazy */ = {
@@ -77,7 +77,7 @@
 				75E43C2D21375A2B003B33E7 /* Knn.swift */,
 				75491C5421385B6E006D694B /* Distances.swift */,
 			);
-			name = Lazy;
+			path = Lazy;
 			sourceTree = "<group>";
 		};
 		7530E42021591E8A002B25C0 /* Regressors */ = {
@@ -85,7 +85,7 @@
 			children = (
 				7530E42121591E97002B25C0 /* Linear */,
 			);
-			name = Regressors;
+			path = Regressors;
 			sourceTree = "<group>";
 		};
 		7530E42121591E97002B25C0 /* Linear */ = {

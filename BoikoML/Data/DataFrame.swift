@@ -38,9 +38,7 @@ public class DataFrame<T> {
         self.populateDictKeys()
         for instance in self.inputData {
             for i in 0..<instance.count {
-//                self.data[i]!.append(instance[i])
                 if instance[i] is Int {
-//                    self.data[i]?.append(instance[i])
                     self.data[i]!.append(Double(instance[i] as! Int))
                 } else if instance[i] is Double{
                     self.data[i]!.append(instance[i] as! Double)
@@ -174,9 +172,14 @@ public class DataFrame<T> {
             if values.count >= minOccurence && values.count <= maxOccurence {
                 self.getHeader()[feature.getIndex()].setDType(dType: .nominal)
                 
-                var listValues = [Int]()
+                var listValues = [Any]()
                 for item in values {
-                    listValues.append(item.key as! Int)
+                    if item.key is String {
+                        listValues.append(item.key as! String)
+                    } else {
+                        listValues.append(item.key as! Int)
+                    }
+                    
                 }
                 // Seto para nominal
                  self.getHeader()[feature.getIndex()].setPossibleValues(values: listValues)
