@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		751B0E9A20D2029700E87670 /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751B0E9920D2029700E87670 /* Feature.swift */; };
-		7530E41A21591485002B25C0 /* BoikoML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7530E41921591485002B25C0 /* BoikoML.swift */; };
 		7530E41F21591E7F002B25C0 /* LinearRegression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7530E41E21591E7F002B25C0 /* LinearRegression.swift */; };
 		7530E423215924F9002B25C0 /* ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7530E422215924F9002B25C0 /* ErrorHandling.swift */; };
 		754812FB20D0826B003A4D6C /* BoikoML.h in Headers */ = {isa = PBXBuildFile; fileRef = 754812F920D0826B003A4D6C /* BoikoML.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -24,8 +23,6 @@
 
 /* Begin PBXFileReference section */
 		751B0E9920D2029700E87670 /* Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
-		7530E41921591485002B25C0 /* BoikoML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoikoML.swift; sourceTree = "<group>"; };
-		7530E41B21591509002B25C0 /* boikoMLPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = boikoMLPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		7530E41E21591E7F002B25C0 /* LinearRegression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearRegression.swift; sourceTree = "<group>"; };
 		7530E422215924F9002B25C0 /* ErrorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandling.swift; sourceTree = "<group>"; };
 		754812F620D0826B003A4D6C /* BoikoML.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BoikoML.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,6 +33,7 @@
 		7548130520D15C78003A4D6C /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		75491C5421385B6E006D694B /* Distances.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Distances.swift; sourceTree = "<group>"; };
 		75491C5621387741006D694B /* ConfusionMatrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfusionMatrix.swift; sourceTree = "<group>"; };
+		75CD4159215A87AF00C4C827 /* BoikoML.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = BoikoML.xcodeproj; sourceTree = "<group>"; };
 		75DDE9BB20DB487200856DDF /* UtilsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsExtensions.swift; sourceTree = "<group>"; };
 		75E43C2B21375971003B33E7 /* AbstractLearner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractLearner.swift; sourceTree = "<group>"; };
 		75E43C2D21375A2B003B33E7 /* Knn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Knn.swift; sourceTree = "<group>"; };
@@ -80,6 +78,14 @@
 			path = Lazy;
 			sourceTree = "<group>";
 		};
+		752A5B06215A7707005948F2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				75DDE9BB20DB487200856DDF /* UtilsExtensions.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		7530E42021591E8A002B25C0 /* Regressors */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +107,7 @@
 			children = (
 				754812F820D0826B003A4D6C /* BoikoML */,
 				754812F720D0826B003A4D6C /* Products */,
+				75CD4158215A87AF00C4C827 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,13 +122,11 @@
 		754812F820D0826B003A4D6C /* BoikoML */ = {
 			isa = PBXGroup;
 			children = (
-				7530E41B21591509002B25C0 /* boikoMLPlayground.playground */,
 				754812F920D0826B003A4D6C /* BoikoML.h */,
 				754812FA20D0826B003A4D6C /* Info.plist */,
-				75DDE9BB20DB487200856DDF /* UtilsExtensions.swift */,
+				752A5B06215A7707005948F2 /* Utils */,
 				7548130720D165E3003A4D6C /* Data */,
 				750F301C21383DB500496B92 /* Inductors */,
-				7530E41921591485002B25C0 /* BoikoML.swift */,
 			);
 			path = BoikoML;
 			sourceTree = "<group>";
@@ -144,6 +149,19 @@
 				75491C5621387741006D694B /* ConfusionMatrix.swift */,
 			);
 			path = Metrics;
+			sourceTree = "<group>";
+		};
+		75CD4158215A87AF00C4C827 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				75CD4159215A87AF00C4C827 /* BoikoML.xcodeproj */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		75CD415A215A87AF00C4C827 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,6 +221,12 @@
 			mainGroup = 754812EC20D0826B003A4D6C;
 			productRefGroup = 754812F720D0826B003A4D6C /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 75CD415A215A87AF00C4C827 /* Products */;
+					ProjectRef = 75CD4159215A87AF00C4C827 /* BoikoML.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				754812F520D0826B003A4D6C /* BoikoML */,
@@ -226,7 +250,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				75491C5521385B6E006D694B /* Distances.swift in Sources */,
-				7530E41A21591485002B25C0 /* BoikoML.swift in Sources */,
 				75491C5721387741006D694B /* ConfusionMatrix.swift in Sources */,
 				751B0E9A20D2029700E87670 /* Feature.swift in Sources */,
 				7548130420D08CA1003A4D6C /* ReadCsv.swift in Sources */,
@@ -387,7 +410,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -415,7 +438,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = UmbrellaCorp.BoikoML;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
