@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
 	BoikoML is an open source framework for machine learning tasks fully written in swift. At the moment, it can load datasets in CSV format. For further instructions about how to use it, go to the GitHub page.
                    DESC
 
-  s.homepage     = "https://github.com/leboiko/BoikoML"
+  s.homepage     = "https://github.com/leboiko/BoikoML_framework"
   
   s.license      = { :type => 'Apache License, Version 2.0', :text => <<-LICENSE
     Licensed under the Apache License, Version 2.0 (the "License");
@@ -26,6 +26,14 @@ Pod::Spec.new do |s|
   
   s.author             = { "Boiko" => "luiseduardo.boiko@gmail.com" }
   s.ios.deployment_target = "12.0"
-  s.source       = { :git => "https://github.com/leboiko/BoikoML.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/leboiko/BoikoML_framework.git", :tag => "#{s.version}" }
   s.source_files  = "BoikoML", ".{h,m}"
 end
+
+
+
+
+
+
+
+export APP_SQLALCHEMY_DATABASE_URI=postgres://wallet:password@127.0.0.1:5432/postgres
